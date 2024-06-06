@@ -1,0 +1,81 @@
+.bodyContainer {
+  width: 100vw; /* 100% ширины окна */
+  height: 100vh; /* 100% высоты окна */
+  /* центрирование!!!! */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quoteMachine {
+  border-radius: 5px;
+  padding: 15px;
+  margin: auto;
+  width: 450px;
+  text-align: center;
+  background-color: white;
+}
+
+.text, .author {
+  font-family: "Raleway", sans-serif;
+  padding-top: 20px;
+  font-size: 1.25em;
+  margin: 0;
+}
+
+.author {
+  text-align: right;
+  font-size: 1.02em;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+/*.left-button:hover {*/
+/*  background-color: white;*/
+/*}*/
+
+.left-button,
+.right-button {
+  /*padding: 10px;*/
+  font-family: "Raleway", sans-serif;
+}
+
+.left-button {
+  width: 40px;
+  height: 38px;
+  /*background-color: #4CAF50; !* Зеленый фон *!*/
+  border: none; /* Удаление границы */
+  color: white; /* Белый текст */
+  /*padding: 5px 0px; !* Отступ - RAT *!*/
+  /*text-align: center; !* Выравнивание текста по центру *!*/
+  /*text-decoration: none; !* Удаление подчеркивания *!*/
+  /*display: inline-block; !* Отображение как блочный элемент *!*/
+  font-size: 13px; /* Размер шрифта */
+  cursor: pointer; /* Курсор указателя */
+  border-radius: 5px; /* Скругленные углы */
+
+  /* центрирование кнопки */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.right-button {
+  width: 90px;
+  height: 38px;
+  /*background-color: #4CAF50; !* Зеленый фон *!*/
+  border: none; /* Удаление границы */
+  color: white; /* Белый текст */
+  /*padding: 5px 0px; !* Отступ *!*/
+  text-align: center; /* Выравнивание текста по центру */
+  /*text-decoration: none; !* Удаление подчеркивания *!*/
+  display: inline-block; /* Отображение как блочный элемент */
+  font-size: 13px; /* Размер шрифта */
+  font-weight: bold;
+  cursor: pointer; /* Курсор указателя */
+  border-radius: 5px; /* Скругленные углы */
+}
