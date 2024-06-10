@@ -21,10 +21,10 @@ const generateRandomColor = () => {
     let color = "#";
     for (let i = 0; i < 6; i++) // generate the random color-number
     {
-        color += letters[Math.floor(Math.random()*16)];
-        if(color === "#ffffff") {
-            continue;
-        }
+        color += letters[Math.floor(Math.random()*16)]; //f f f f f f
+    }
+    if(color === "#ffffff") {
+        color = generateRandomColor(); // recursion abd reassign the variable
     }
     return color;
 }
@@ -36,6 +36,7 @@ const QuoteBox = () => {
 
     useEffect(() => {
         document.body.style.backgroundColor = bgColor;
+        getRandomQuote();
     }, [bgColor])
 
     const getRandomQuote = () => {
