@@ -34,10 +34,6 @@
   padding-top: 10px;
 }
 
-/*.left-button:hover {*/
-/*  background-color: white;*/
-/*}*/
-
 .left-button,
 .right-button {
   /*padding: 10px;*/
@@ -78,4 +74,8 @@
   font-weight: bold;
   cursor: pointer; /* Курсор указателя */
   border-radius: 5px; /* Скругленные углы */
+}
+
+.left-button:hover, .right-button:hover {
+  filter: brightness(1.17);
 }
