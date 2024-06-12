@@ -1,4 +1,3 @@
-import React, {useEffect} from "react";
 import {useState} from "react";
 import twitImage from "./twitter.png"
 
@@ -33,7 +32,12 @@ const possibleQuotes = [
     '"Many of life\'s failures are people who did not realize how close they were to success when they gave up." - Thomas A. Edison'
 ]
 
-const generateRandomColor = () => {
+const getRandomQuote = () => {
+    const randomIndex = Math.floor(Math.random() * possibleQuotes.length);
+    return possibleQuotes[randomIndex];
+} // return string
+
+const getRandomColor = () => {
     let letters = "0123456789abcdef";
     let color = "#";
     for (let i = 0; i < 6; i++) // generate the random color-number
@@ -41,36 +45,36 @@ const generateRandomColor = () => {
         color += letters[Math.floor(Math.random()*16)]; //f f f f f f
     }
     if(color === "#ffffff") {
-        color = generateRandomColor(); // recursion abd reassign the variable
+        color = getRandomColor(); // recursion abd reassign the variable
     }
     return color;
-}
+} // return string
+
+
 
 const QuoteBox = () => {
     const [quote, setQuote] = useState(''); // initialisation of state; quote - using for keeping the value, setQuote - using for updating
-    const [bgColor, setBgColor] = useState(generateRandomColor());
+    const [bgColor, setBgColor] = useState('');
     let authorIdx = quote.split("-").length - 1
 
-    useEffect(() => {
-        document.body.style.backgroundColor = bgColor;
-        getRandomQuote();
-    });
-
-    const getRandomQuote = () => {
-        const randomIndex = Math.floor(Math.random() * possibleQuotes.length);
-        setQuote(possibleQuotes[randomIndex]);
+    const updateQuoteAndColor = () => {
+        let newColor = getRandomColor();
+        document.body.style.backgroundColor = newColor;
+        setQuote(getRandomQuote());
+        setBgColor(newColor);
+        console.log("update!")
     }
 
-    // const getRandomColor = () => {
-    //     const color = generateRandomColor();
-    //     document.body.style.backgroundColor = color; // directly modify the body background
-    //     setBgColor(color);
-    // }
+    // on init
+    if(quote === '') {
+        updateQuoteAndColor();
+    }
 
     const handleCLick = () => {
-        // getRandomQuote();
-        setBgColor(generateRandomColor());
+        updateQuoteAndColor();
     }
+
+
 
     return (
         <>
